@@ -52,8 +52,13 @@ body{
 
 h1{
   font-size: 3rem;
+  font-family:'Merriweather',sans-serif ;
+  color:#283149;
+  text-shadow: 1px 0 #DA0463;
 }
 
 h2{
   visibility: hidden;
+  font-family:'Merriweather',sans-serif ;
+  color:#DA0463;
 }

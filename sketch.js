@@ -250,20 +250,6 @@ function draw() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function clicked(elementId){
     var node=document.getElementById(elementId);
 

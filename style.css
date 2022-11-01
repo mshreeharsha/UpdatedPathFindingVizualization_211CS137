@@ -1,0 +1,59 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color:#66BFBF;
+  text-align: center;
+}
+
+.maze_container{
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.row{
+  height:50px;
+  width: 500px;
+  display:flex;
+}
+
+.node{
+  background-color: rgb(243,190,190);
+  width: 50px;
+  height:50px;
+  border: 1px solid gray;
+  transition: transform .2s;
+}
+
+.node:hover{
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.node1{
+  background-color: red;
+}
+
+.node100{
+  background-color: green;
+}
+
+.button{
+  padding: 5px 15px 5px 15px;
+  font-size:20px;
+  margin-right: 10px;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  visibility: hidden;
+}

@@ -61,15 +61,6 @@ function Spot(i,j){
     return false;
   }
 
-  
-  
-/*
-  for(var k=0;k<xarray.length;k++){
-    if(xarray[k]==this.i && yarray[k]==this.j){
-      this.wall=true;
-    }
-  }
-*/
 
   this.addNeighbours=function(grid){
     if(i<rows-1){
@@ -187,6 +178,7 @@ function draw() {
         node.style.backgroundColor='rgb(186, 85, 211)';
       }
       noLoop();
+      document.querySelector(".legend").style.visibility='visible';
       document.querySelector("h2").style.visibility = 'visible';
     }
     removeElement(openSet,current);
@@ -235,6 +227,7 @@ function draw() {
     noLoop();
     document.querySelector("h2").textContent='Sorry !!! Path Does Not Exist!!!';
     document.querySelector("h2").style.visibility='visible';
+    document.querySelector(".legend").style.visibility='visible';
     return;
   }
 

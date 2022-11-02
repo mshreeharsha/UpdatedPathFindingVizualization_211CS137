@@ -3,8 +3,10 @@ var drawThings = false;
 var Wall='rgb(255, 255, 255)';
 var original = 'rgb(243, 190, 190)';
 
-var rows=10;
-var cols=10;
+var number=prompt("Enter the No of rows in the grid");
+
+var rows=number;
+var cols=number;
 var grid = new Array(rows);
 
 function removeElement(arr,key){
@@ -52,7 +54,7 @@ function Spot(i,j){
       return false;
     }
 
-    var nnode=document.getElementById("node"+((this.i*10)+(this.j+1)));
+    var nnode=document.getElementById("node"+((this.i*number)+(this.j+1)));
     if(nnode.style.backgroundColor == Wall){
       return true;
     }
@@ -102,21 +104,23 @@ function Spot(i,j){
 
 
 function setup(){
+
+
     var maze_container=document.getElementById('maze_container');
-    for(var i=0;i<10;i++){
+    for(var i=0;i<number;i++){
         var row=document.createElement('div');
 
         row.className= "row row"+(i+1);
 
         row.id="row"+(i+1);
-        for(var j=0;j<10;j++){
+        for(var j=0;j<number;j++){
 
             var node=document.createElement('div');
 
-            node.className="node node"+((i*10)+(j+1));
+            node.className="node node"+((i*number)+(j+1));
 
-            node.id="node"+((i*10)+(j+1));
-            if(((i*10)+(j+1))!=1 && ((i*10)+(j+1))!=100){
+            node.id="node"+((i*number)+(j+1));
+            if(((i*number)+(j+1))!=1 && ((i*number)+(j+1))!=(number*number)){
                 node.style.backgroundColor=original;
 
                 node.onclick=function(){
@@ -129,6 +133,10 @@ function setup(){
 
         maze_container.appendChild(row);
     }
+
+    var N=document.getElementById("node"+(number*number));
+    N.style.backgroundColor="green";
+
 
     for(var i=0;i<rows;i++){
       grid[i]=new Array(cols);
@@ -175,7 +183,7 @@ function draw() {
     if(current === end){
       path.push(end);
       for(var i=0;i<path.length;i++){
-        var node=document.getElementById("node"+(((path[i].i)*10)+((path[i].j)+1)));
+        var node=document.getElementById("node"+(((path[i].i)*number)+((path[i].j)+1)));
         node.style.backgroundColor='rgb(186, 85, 211)';
       }
       noLoop();
@@ -221,7 +229,7 @@ function draw() {
   else{
     //All grid points are been visited
     for(var i=0;i<path.length;i++){
-      var node=document.getElementById("node"+(((path[i].i)*10)+((path[i].j)+1)));
+      var node=document.getElementById("node"+(((path[i].i)*number)+((path[i].j)+1)));
       node.style.backgroundColor='rgb(186, 85, 211)';
     }
     noLoop();
@@ -261,7 +269,7 @@ function clicked(elementId){
 }
 
 function reset(){
-    for(var i=2;i<100;i++){
+    for(var i=2;i<(number*number);i++){
         var node=document.getElementById("node"+i);
 
         node.style.backgroundColor=original;

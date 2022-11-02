@@ -101,3 +101,9 @@ a{
   color:#EAEAEA;
   font-weight: normal;
 }
+
+h3{
+  font-size: 2rem;
+  color:#FCE700;
+  text-transform: uppercase;
+}

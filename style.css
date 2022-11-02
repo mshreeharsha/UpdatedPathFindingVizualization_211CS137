@@ -48,6 +48,7 @@ body{
   padding: 5px 15px 5px 15px;
   font-size:20px;
   margin-right: 10px;
+  margin-bottom: 40px;
 }
 
 h1{
@@ -55,6 +56,7 @@ h1{
   font-family:'Merriweather',sans-serif ;
   color:#283149;
   text-shadow: 1px 0 #DA0463;
+  margin-bottom: 50px;
 }
 
 h2{

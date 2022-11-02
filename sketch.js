@@ -173,10 +173,14 @@ function draw() {
     var current=openSet[lowestIndex];
 
     if(current === end){
+      path.push(end);
+      for(var i=0;i<path.length;i++){
+        var node=document.getElementById("node"+(((path[i].i)*10)+((path[i].j)+1)));
+        node.style.backgroundColor='rgb(186, 85, 211)';
+      }
       noLoop();
       document.querySelector("h2").style.visibility = 'visible';
     }
-
     removeElement(openSet,current);
     closedSet.push(current);
 
@@ -209,16 +213,17 @@ function draw() {
           neigh.previous=current;
         }
         
-
-
       }
     }
-
 
 
   }
   else{
     //All grid points are been visited
+    for(var i=0;i<path.length;i++){
+      var node=document.getElementById("node"+(((path[i].i)*10)+((path[i].j)+1)));
+      node.style.backgroundColor='rgb(186, 85, 211)';
+    }
     noLoop();
     document.querySelector("h2").textContent='Sorry !!! Path Does Not Exist!!!';
     document.querySelector("h2").style.visibility='visible';
@@ -239,13 +244,7 @@ function draw() {
   while(temp.previous){
     path.push(temp.previous);
     temp=temp.previous;
-  }
-  
-
-  for(var i=0;i<path.length;i++){
-      var node=document.getElementById("node"+(((path[i].i)*10)+((path[i].j)+1)));
-      node.style.backgroundColor='rgb(92, 92, 92)';
-  }
+  }  
 }
 }
 

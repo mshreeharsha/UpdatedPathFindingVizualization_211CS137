@@ -111,6 +111,10 @@ function setup(){
             node.className="node node"+((i*number)+(j+1));
 
             node.id="node"+((i*number)+(j+1));
+            var w=(100/number);
+            var ws=w+"%";
+            node.style.width=ws;
+
             if(((i*number)+(j+1))!=1 && ((i*number)+(j+1))!=(number*number)){
                 node.style.backgroundColor=original;
 
